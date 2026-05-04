@@ -13,6 +13,13 @@ This repository contains the Jupyter notebooks, scripts, and figures associated 
 + /figures - Contains output plots and geospatial visualizations for the event
 
 ## Usage:
+Data Summary: The dataset consists of hourly simulation outputs encompassing the 48-hour period surrounding the December 14, 2024 event, cropped to the modeling domain of interest.
++ Data format: NetCDF4 (.nc)
++ Temporal Resolution: Hourly outputs
+
+How to Access the Data: 
++ For Users on the University HPC: If you have access to the university's supercomputer/HPC cluster, the raw WRF output files are stored in the shared project directory.
+
 WRF Extraction: Start by opening variables_in_wrfout.ipynb to process output from the December 14, 2024, case study and generate initial animations or plots.
 
 Statistical Modeling: Run FRAMandOutageAnalysis.ipynb to merge meteorological parameters with outage counts and fit the regression models.
