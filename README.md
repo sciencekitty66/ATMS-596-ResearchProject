@@ -1,47 +1,21 @@
-# Research Project: Ice Accretion Analysis Using WRF and FRAM
+# Modeling Ice Accretion Impacts on Electric Infrastructure Using WRF Output
 
-Author: Alison Chatham \
-Institution: University of Illinois Urbana-Champaign \
-Date: April 2026 
+This repository contains the Jupyter notebooks, scripts, and figures associated with the case study analyzing the meteorological conditions and subsequent customer power outages on December 14, 2024.
 
-1. Project Overview
+## Repository Contents:
+1. Notebooks:
++ FRAMandOutageAnalysis.ipynb - Contains the statistical modeling and regression analysis, specifically examining the relationship between radial ice accretion and customer power outages (utilizing statsmodels OLS).
++ variables_in_wrfout.ipynb - Contains workflows for processing and visualizing WRF model outputs, calculating variables such as wet-bulb temperature, and creating animations of event evolution.
+2. In-Development Notebooks:
++ FRANA_implementation.ipynb
++ ensemble_analysis.ipynb
+3. Figures
++ /figures - Contains output plots and geospatial visualizations for the event
 
-This repository contains code and analysis workflows used to investigate freezing rain ice accretion from a WRF-ARW ensemble simulation of the 14 December 2024 winter storm. The primary objectives of this project are to:
-- Implement the Freezing Rain Accumulation Model (FRAM) on WRF output
-- Evaluate ice accretion forecasts across ensemble members
-- Compare modeled ice accretion against surface observations (NWS)
-- Assess spatial variability and uncertainty in freezing rain impacts
+## Usage:
+WRF Extraction: Start by opening variables_in_wrfout.ipynb to process output from the December 14, 2024, case study and generate initial animations or plots.
 
-2. Scientific Background
+Statistical Modeling: Run FRAMandOutageAnalysis.ipynb to merge meteorological parameters with outage counts and fit the regression models.
 
-Freezing rain produces ice accretion when supercooled liquid precipitation freezes upon contact with exposed surfaces. The amount of ice accumulation depends on both precipitation and near-surface thermodynamic conditions. This project applies the Freezing Rain Accumulation Model (FRAM), an empirical model used to estimate ice accretion from commonly available meteorological variables.
-
-FRAM incorporates:
-- Liquid-equivalent precipitation
-- Near-surface air temperature
-- Wet-bulb temperature
-- Wind speed
-
-Dew point (or wet-bulb temperature) is used to better represent thermal conditions governing accretion efficiency, including the effects of evaporative cooling and latent heat exchange. This improves estimation of whether precipitation will freeze efficiently upon contact.
-
-FRAM uses regime-based relationships to estimate ice accretion and produces:
-- Flat ice accretion (horizontal surfaces)
-- Radial ice accretion (cylindrical structures, e.g., power lines)
-
-As an empirical diagnostic model, FRAM does not explicitly simulate detailed microphysical processes such as droplet size distributions. Instead, it provides a computationally efficient method for estimating ice accretion from model output (e.g., WRF), making it well suited for ensemble and post-processing applications.
-
-3. Repository Structure
-- FRAM_implementation.ipynb (Core FRAM algorithm applied to WRF output)
-- variables_in_wrfout.ipynb (Exploration and extraction of WRF variables)
-- ensemble_analysis.ipynb (Ensemble processing and statistical analysis)
-- ..... ([placeholder])
-- README.md     
-
-4. Data Sources\
-WRF Model Output\
-Model: WRF-ARW\
-Case: 14 December 2024 winter storm\
-Format: NetCDF (wrfout files)\
-Variables Used:
-- [placeholder]
-[Your Email]
+## License:
+[Open Source / MIT License - update as needed]
